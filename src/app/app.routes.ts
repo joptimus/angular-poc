@@ -9,6 +9,14 @@ export const routes: Routes = [
   {
     path: 'folder/:id',
     loadComponent: () =>
-      import('./folder/folder.page').then((m) => m.FolderPage),
+      import('./private/home/folder.page').then((m) => m.FolderPage),
+  },
+  {
+    path: 'deliver',
+    loadComponent: () => import('./private/deliver/deliver.page').then( m => m.DeliverPage)
+  },
+  {
+    path: 'signature',
+    loadComponent: () => import('./private/signature/signature.page').then( m => m.SignaturePage)
   },
 ];
