@@ -117,6 +117,9 @@
     <ion-card>
       <ion-card-header>Scan ID</ion-card-header>
       <ion-input [(ngModel)]="rawData"></ion-input>
+      <ion-button expand="block" (click)="openScanner()">
+        <ion-icon name="barcode-sharp"></ion-icon>
+      </ion-button>
     </ion-card>
     
     <div *ngIf="show">

@@ -27,6 +27,7 @@
     "@capacitor/barcode-scanner": "^1.0.1",
     "@capacitor/core": "latest",
     "@capacitor/haptics": "latest",
+    "@capacitor/ios": "6.1.2",
     "@capacitor/keyboard": "latest",
     "@capacitor/screen-orientation": "^6.0.2",
     "@capacitor/status-bar": "latest",

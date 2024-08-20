@@ -15,7 +15,7 @@ import { Observable } from 'rxjs';
 import { ModalComponent } from '../components/modal/modal.component';
 import { ReceiveComponent } from '../components/receive/receive.component';
 import { addIcons } from 'ionicons';
-import { barcodeSharp } from 'ionicons/icons';
+import { barcodeSharp, call, fishOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-folder',
@@ -56,7 +56,7 @@ export class FolderPage implements OnInit {
   show: boolean = false;
   showPDF417Data: boolean = false;
   rawData: string;
-  stream;
+  stream: MediaStream;
 
   constructor(
     private http: HttpClient,
@@ -67,6 +67,8 @@ export class FolderPage implements OnInit {
   ) {
     addIcons({
       'barcode-sharp': barcodeSharp,
+      fishOutline,
+      call
     });
   }
   async ngOnInit() {
@@ -76,6 +78,11 @@ export class FolderPage implements OnInit {
     this.setupScanListener();
   }
 
+  // ngAfterViewInit() {
+  //   console.log('ngAfterViewInit called');
+  //   console.log(this.videoElement); // Should not be undefined here
+  //   this.startVideoStream();
+  // }
   private setupKeyboardListener(): void {
     // if (Capacitor.getPlatform() === 'android') {
     //   Keyboard.addListener('keyboardWillShow', (info) => {
